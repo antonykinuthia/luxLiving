@@ -3,6 +3,7 @@ import "./global.css";
 import { useFonts  } from "expo-font";
 import { useEffect } from "react";
 import GlobalProvider from "@/lib/global-provider";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function RootLayout() {
   const [ fontsLoaded ] = useFonts({
@@ -25,7 +26,9 @@ export default function RootLayout() {
   
   return (
     <GlobalProvider>
-     <Stack screenOptions={{ headerShown: false}}/>
+      <GestureHandlerRootView>
+        <Stack screenOptions={{ headerShown: false}}/>
+      </GestureHandlerRootView>
     </GlobalProvider>
     ) 
     
